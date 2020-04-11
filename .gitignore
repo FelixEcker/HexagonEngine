@@ -1,0 +1,13 @@
+# Ignore Gradle project-specific cache directory
+*/.[Gg]radle/
+
+# eclipse
+.project
+.classpath
+
+# Ignore Gradle build output directory
+*/[Bb]uild/
+*/[Bb]in/
+
+# Other
+test.bat
