@@ -11,3 +11,4 @@ bin/
 
 # Other
 test.bat
+.settings/org.eclipse.buildship.core.prefs

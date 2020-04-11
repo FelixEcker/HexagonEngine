@@ -11,9 +11,6 @@ public class GameHandler implements IGameHandler {
 	HexagonEngine engine;
 	GameStates states = new GameStates();
 	IGameState currentState;
-	float vol = 1.0f;
-	boolean decreaseVol = true;
-	
 	boolean trackPlaying;
 	
 	@Override
@@ -34,20 +31,6 @@ public class GameHandler implements IGameHandler {
 		if (!trackPlaying)
 			engine.getSoundEngine().getSoundRegistry().getSound("testtrack").playSound();
 		trackPlaying = true;
-		
-		if (decreaseVol) {
-			engine.getSoundEngine().getSoundRegistry().getSound("testtrack").changeVolume(vol-0.1f);
-			
-			if (vol == 0.1f) {
-				decreaseVol = false;
-			}
-		} else {
-			engine.getSoundEngine().getSoundRegistry().getSound("testtrack").changeVolume(vol+0.1f);
-			
-			if (vol == 1.0f) {
-				decreaseVol = true;
-			}
-		}
 		
 		getCurrentState().update(engine);
 	}
