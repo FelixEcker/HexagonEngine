@@ -4,11 +4,12 @@ import java.awt.Graphics;
 
 import com.hexagonstudios.hexagonengine.HexagonEngine;
 import com.hexagonstudios.hexagonengine.IGameObject;
+import com.hexagonstudios.hexagonengine.sound.HexagonSoundEngine;
 
 public class TestObject implements IGameObject {
 
 	@Override
-	public void init() {
+	public void init(HexagonSoundEngine soundEngine) {
 		
 	}
 

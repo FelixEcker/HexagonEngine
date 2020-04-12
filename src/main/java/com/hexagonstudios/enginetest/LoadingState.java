@@ -7,10 +7,22 @@ import com.hexagonstudios.hexagonengine.HexagonEngine;
 import com.hexagonstudios.hexagonengine.IGameState;
 
 public class LoadingState implements IGameState {
-
+	boolean soundPlaying;
+	int tick = 0;
+	
 	@Override
 	public void update(HexagonEngine engine) {
-		engine.getObjectHandler().getObject("TestObject").update(engine);
+		tick++;
+		if (!soundPlaying) {
+			engine.getObjectHandler().getSoundObject("testObject_sound").init(engine.getSoundEngine());
+			engine.getObjectHandler().getSoundObject("testObject_sound").activate();
+		}
+		soundPlaying = true;
+		
+		if (soundPlaying && tick == 50) {
+			engine.getObjectHandler().getSoundObject("testObject_sound").update(engine);; // Change the volume
+			tick = 0;
+		}
 	}
 
 	@Override
