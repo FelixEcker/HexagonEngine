@@ -34,7 +34,7 @@ public class Sound {
 	 * Plays the set sound file.
 	 * @author Felix Eckert
 	 * */
-	public void playSound() {
+	public synchronized void playSound() {
 		try {
 			this.clip.open(stream);
 		} catch (LineUnavailableException | IOException e) {
