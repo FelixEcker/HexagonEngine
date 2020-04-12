@@ -23,6 +23,10 @@ public class LoadingState implements IGameState {
 			engine.getObjectHandler().getSoundObject("testObject_sound").update(engine);; // Change the volume
 			tick = 0;
 		}
+		
+		if (engine.getKeyInput().wasKeyPressed('h')) {
+			System.out.println("H");
+		}
 	}
 
 	@Override

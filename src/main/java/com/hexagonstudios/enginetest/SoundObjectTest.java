@@ -29,7 +29,6 @@ public class SoundObjectTest implements ISoundObject {
 	@Override
 	public void update(HexagonEngine engine) {
 		vol += 0.1f;
-		System.out.println(vol); // Print out new Volume DEBUG
 		sound.changeVolume(vol); // Change the volume
 	}
 

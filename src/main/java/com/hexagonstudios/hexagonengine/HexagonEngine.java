@@ -34,6 +34,7 @@ package com.hexagonstudios.hexagonengine;
 import java.util.Properties;
 
 import com.hexagonstudios.hexagonengine.graphics.HexagonGraphicsEngine;
+import com.hexagonstudios.hexagonengine.input.KeyInput;
 import com.hexagonstudios.hexagonengine.sound.HexagonSoundEngine;
 
 public class HexagonEngine implements Runnable {
@@ -51,6 +52,7 @@ public class HexagonEngine implements Runnable {
 	private HexagonGraphicsEngine graphicsEngine;
 	private HexagonSoundEngine soundEngine;
 	private ObjectHandler objectHandler;
+	private KeyInput keyInput;
 	private IGameHandler gameHandler;
 	private Thread thread;
 	boolean running;
@@ -141,6 +143,9 @@ public class HexagonEngine implements Runnable {
 		soundEngine = new HexagonSoundEngine();
 		// Create ObjectHandler
 		objectHandler = new ObjectHandler();
+		// Add Key Listener
+		keyInput = new KeyInput();
+		graphicsEngine.getGameWindow().getFrame().addKeyListener(keyInput);
 	}
 	
 	/**
@@ -244,4 +249,6 @@ public class HexagonEngine implements Runnable {
 	 * @author Felix Eckert
 	 * */
 	public HexagonSoundEngine getSoundEngine() { return this.soundEngine; }
+	
+	public KeyInput getKeyInput() { return this.keyInput; }
 }
