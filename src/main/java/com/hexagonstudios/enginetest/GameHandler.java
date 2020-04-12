@@ -12,6 +12,9 @@ public class GameHandler implements IGameHandler {
 	GameStates states = new GameStates();
 	IGameState currentState;
 	boolean trackPlaying;
+	boolean rise;
+	float vol = 0.01f;
+	int tick;
 	
 	@Override
 	public void init(HexagonEngine engine) {
@@ -24,13 +27,22 @@ public class GameHandler implements IGameHandler {
 	
 	@Override
 	public void update() {
+		tick++;
 		if (this.getCurrentState() == null) {
 			setState(states.getGameState(1));
 			return;
 		}
 		if (!trackPlaying)
-			engine.getSoundEngine().getSoundRegistry().getSound("testtrack").playSound();
+			engine.getSoundEngine().playSound("testtrack");
 		trackPlaying = true;
+		
+		// Slowly raise volume every 50 executions of update
+		if (trackPlaying && tick == 50) {
+			vol += 0.01f;
+			System.out.println(vol); // Print out new Volume DEBUG
+			engine.getSoundEngine().changeSoundVolume("testtrack", vol); // Change the volume
+			tick = 0; // Reset the tick counter
+		}
 		
 		getCurrentState().update(engine);
 	}
