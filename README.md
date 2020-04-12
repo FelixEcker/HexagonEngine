@@ -14,8 +14,9 @@ Software.
 * Basic Graphics Engine
   * Animation System (W.I.P)
 * Sound Engine (W.I.P)
+  * Sound Objects
 * Object Handling
-* Interfaces for Game Handlers, Game Objects & Renderes
+* Interfaces for Game Handlers, Game Objects & Renderers
 
 ## Contributors
 ### Project Lead
