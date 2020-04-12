@@ -51,6 +51,8 @@ public class Sound {
 	public void changeVolume(float volume) {
 		FloatControl gain = (FloatControl) this.clip.getControl(FloatControl.Type.MASTER_GAIN);
 		float db = (float) (Math.log(volume) / Math.log(10) * 20);
+		if (db > 6.0206f)
+			return;
 		gain.setValue(db);
 	}
 }
