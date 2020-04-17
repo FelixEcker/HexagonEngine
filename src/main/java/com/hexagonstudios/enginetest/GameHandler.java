@@ -22,6 +22,7 @@ public class GameHandler implements IGameHandler {
 		engine.getSoundEngine().getSoundRegistry().registerSound(new Sound(this.getClass().getClassLoader().getResource("testtrack.wav")), "testtrack");
 		engine.getObjectHandler().registerObject(new TestObject(), null);
 		engine.getObjectHandler().registerObject(null, new SoundObjectTest());
+		engine.getObjectHandler().registerObject(new PhysicsObjectTest(), null);
 		states.addGameState(new BaseState());
 		states.addGameState(new LoadingState());
 	}

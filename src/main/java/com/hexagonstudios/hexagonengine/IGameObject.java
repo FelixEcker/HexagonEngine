@@ -10,4 +10,5 @@ public interface IGameObject {
 	void update(HexagonEngine engine);
 	
 	String getObjectName();
+	boolean isPhysicsObject();
 }

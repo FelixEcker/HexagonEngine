@@ -29,4 +29,6 @@ public class ObjectHandler {
 	
 	public IGameObject getObject(String name) { return (IGameObject) objects.get(name); }
 	public ISoundObject getSoundObject(String name) { return (ISoundObject) soundObjects.get(name); }
+	public HashMap<String, IGameObject> getObjectMap() { return objects; }
+	public HashMap<String, ISoundObject> getSoundObjectMap() { return soundObjects; }
 }

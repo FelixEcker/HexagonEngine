@@ -25,5 +25,9 @@ public class TestObject implements IGameObject {
 
 	@Override
 	public String getObjectName() { return "TestObject"; }
-	
+
+	@Override
+	public boolean isPhysicsObject() {
+		return false;
+	}
 }

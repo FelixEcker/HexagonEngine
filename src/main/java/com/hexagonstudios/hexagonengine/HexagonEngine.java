@@ -35,6 +35,7 @@ import java.util.Properties;
 
 import com.hexagonstudios.hexagonengine.graphics.HexagonGraphicsEngine;
 import com.hexagonstudios.hexagonengine.input.KeyInput;
+import com.hexagonstudios.hexagonengine.physics.HexagonPhysicsEngine;
 import com.hexagonstudios.hexagonengine.sound.HexagonSoundEngine;
 
 public class HexagonEngine implements Runnable {
@@ -51,6 +52,7 @@ public class HexagonEngine implements Runnable {
 	private Properties engineErrorCodes;
 	private HexagonGraphicsEngine graphicsEngine;
 	private HexagonSoundEngine soundEngine;
+	private HexagonPhysicsEngine physicsEngine;
 	private ObjectHandler objectHandler;
 	private KeyInput keyInput;
 	private IGameHandler gameHandler;
@@ -143,6 +145,8 @@ public class HexagonEngine implements Runnable {
 		soundEngine = new HexagonSoundEngine();
 		// Create ObjectHandler
 		objectHandler = new ObjectHandler();
+		// Create Physics Engine
+		physicsEngine = new HexagonPhysicsEngine(this);
 		// Add Key Listener
 		keyInput = new KeyInput();
 		graphicsEngine.getGameWindow().getFrame().addKeyListener(keyInput);
@@ -250,5 +254,17 @@ public class HexagonEngine implements Runnable {
 	 * */
 	public HexagonSoundEngine getSoundEngine() { return this.soundEngine; }
 	
+	/**
+	 * Returns the Engine's key Listener
+	 * 
+	 * @author Felix Eckert
+	 * */
 	public KeyInput getKeyInput() { return this.keyInput; }
+	
+	/**
+	 * Returns the Engine's Phyiscs Engine
+	 * 
+	 * @author Felix Eckert
+	 * */
+	public HexagonPhysicsEngine getPhysicsEngine() { return this.physicsEngine; }
 }

@@ -38,4 +38,9 @@ public class SoundObjectTest implements ISoundObject {
 	public String getObjectName() {
 		return "testObject_sound";
 	}
+	
+	@Override
+	public boolean isPhysicsObject() {
+		return false;
+	}
 }
