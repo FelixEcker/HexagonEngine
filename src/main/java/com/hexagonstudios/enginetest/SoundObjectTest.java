@@ -22,7 +22,6 @@ public class SoundObjectTest implements ISoundObject {
 	@Override
 	public void activate() {
 		sound = soundEngine.getSoundRegistry().getSound(soundName);
-		
 		sound.playSound();
 	}
 
