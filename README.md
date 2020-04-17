@@ -17,6 +17,7 @@ Software.
   * Sound Objects
 * Object Handling
 * Interfaces for Game Handlers, Game Objects & Renderers
+* Physics Engine (W.I.P)
 
 ## Contributors
 ### Project Lead
