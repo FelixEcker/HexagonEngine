@@ -1,44 +1,36 @@
-# Hexagon-Engine
-The Hexagon Engine is a free-to-use 2D game-engine written in Java.
-
-## Versions
-0.1.0 EARLY ALPHA (No Build available)
-
-## About
-Hexagon Engine is a 2D game-engine written in Java using standard libraries,
-it is currently in the Early-Alpha stage and is actively developed by Felix Eckert.
-It is **free** and will remain that way, this software can be used in free and charged
-Software.
-
-## Current Features
-* Basic Graphics Engine
-  * Animation System (W.I.P)
-* Sound Engine (W.I.P)
-  * Sound Objects
-* Object Handling
-* Interfaces for Game Handlers, Game Objects & Renderers
-* Physics Engine (W.I.P)
-
-## Contributors
-### Project Lead
-`Felix Eckert (Bertrahm)`
+# Hexagon Engine
+This is one of the many rewrites of the Hexagon Engine. But this one aims to be the final version and will still be based in java using AWT. It's main purpose is for simple 2D games.
 
 ## License
-Copyright (c) 2020 Felix Eckert
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+The HexagonEngine is licensed under the BSD 3-Clause "New" or "Revised" License, this can be found in the LICENSE.txt file.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+## Required Libraries
+### Required Libraries for developing the engine
+All required Libraries are found in the pom.xml and are automatically downloaded when using maven.
+If a library is added, this must be done via maven.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+### Required Libraries for using the engine
+Most libraries come packaged with the engine, inorder to keep it as a standalone jar-file.
+If this should change, they will be found below.
+
+## Examples
+Basic examples can be found in the test package of the engine.
+
+## Current Features
+The engine currently only features some quite basic things, these are:
+* Sprite Rendering
+	* Layered Sprite Renderering via the LayeredSpriteRenderer class
+* Basic Input
+* A extenable GameObject system
+	* Game Object Components
+
+## W.I.P Features
+* Camera System
+* Physics Engine
+* GUI System
+
+## Other Documents
+License <br />
+JavaDoc <br />
+Contributors <br />
+Documentation <br />
