@@ -4,11 +4,23 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Mouse extends MouseAdapter {
-	public boolean mouseClicked;
+	public int buttonClicked;
+	
+	public Mouse() {
+		buttonClicked = -1;
+	}
 	
 	@Override
 	public void mousePressed(MouseEvent e) {
-		System.out.println("asd");
-		System.out.println(e.getButton());
+		buttonClicked = e.getButton();
+	}
+	
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		buttonClicked = -1;
+	}
+	
+	public boolean wasButtonClicked(int button) {
+		return button == buttonClicked;
 	}
 }

@@ -25,7 +25,11 @@ public class Main {
 			
 			@Override
 			public void update() {
-				//System.out.print("W down: "+HexagonEngine.HE_KEY_INPUT.isKeyDown('w')+"\r");
+				if (HexagonEngine.HE_MOUSE_INPUT.wasButtonClicked(1)) {
+					HexagonEngine.HE_GOBJ_MANAGER.getGOBJ_OBJS().get("player").setX(0);
+					HexagonEngine.HE_GOBJ_MANAGER.getGOBJ_OBJS().get("player").setY(0);
+					System.out.println("A");
+				}
 			}
 
 			@Override

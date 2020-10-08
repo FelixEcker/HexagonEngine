@@ -139,8 +139,10 @@ public class HexagonEngine implements Runnable {
 		HE_WINDOW.setResizable(resizable);
 		HE_WINDOW.setVisible(true);
 
-		HE_WINDOW.addMouseListener(HE_MOUSE_INPUT);
-		HE_WINDOW.addKeyListener(HE_KEY_INPUT);
+		HE_WINDOW.getCVS().addMouseListener(HE_MOUSE_INPUT);
+		HE_WINDOW.getCVS().addKeyListener(HE_KEY_INPUT);
+		
+		HE_WINDOW.getCVS().requestFocus();
 		
 		initialised = true;
 		logger.info("Engine initialised succesfully!");
