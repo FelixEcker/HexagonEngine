@@ -33,7 +33,7 @@ public class JSONResourceLoader {
 		
 		for (String texture : textures.keySet()) {
 			loadedTextures++;
-			HexagonEngine.HE_RES_MANAGER.addResource(texture, new TextureResource(textures.get(texture).getAsString()));
+			HexagonEngine.HE_RES_MANAGER.addResource(texture, new TextureResource(textures.get(texture).getAsString(), true));
 		}
 		
 		logger.info("Loaded "+loadedTextures+" textures");

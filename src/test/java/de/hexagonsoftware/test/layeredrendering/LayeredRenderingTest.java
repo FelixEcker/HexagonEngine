@@ -14,10 +14,10 @@ public class LayeredRenderingTest implements IGame {
 		try {
 			JSONResourceLoader.loadResources("/resources.json");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		HexagonEngine.HE_GOBJ_MANAGER.addGameObject("test", new TestObject());
+		System.out.println(HexagonEngine.HE_RES_MANAGER.getTextureResource("CharacterFRONT").getImage());
 	}
 
 	@Override
