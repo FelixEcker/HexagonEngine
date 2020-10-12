@@ -4,7 +4,7 @@
 	<artifactId>HexagonEngine</artifactId>
 	<version>1.0.0</version>
 	<name>Hexagon Engine</name>
-	<description>A 2D java OpenGL engine</description>
+	<description>A 2D java awt engine</description>
     
 	<dependencies>   
 		<dependency>
@@ -24,8 +24,4 @@
 	        <version>2.13.2</version>
 	    </dependency>
 	</dependencies>
-	<developer>
-		<name>Felix Eckert</name>
-		<organization>Hexagon Software</organization>
-	</developer>
 </project>
