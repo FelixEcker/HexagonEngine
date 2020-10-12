@@ -136,6 +136,7 @@ public class HexagonEngine implements Runnable {
 		
 		this.HE_WINDOW = new HEWindow(HE_WINDOW_TITLE, width, height);
 		
+		HE_WINDOW.setDefaultCloseOperation(HE_WINDOW.EXIT_ON_CLOSE);
 		HE_WINDOW.setResizable(resizable);
 		HE_WINDOW.setVisible(true);
 
