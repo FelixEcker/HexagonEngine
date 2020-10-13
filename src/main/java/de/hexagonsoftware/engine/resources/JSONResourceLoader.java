@@ -24,6 +24,9 @@ public class JSONResourceLoader {
 		if (resourceFile.has("textures")) {
 			loadTextures(resourceFile);
 		}
+		if (resourceFile.has("sounds")) {
+			loadSounds(resourceFile);
+		}
 	}
 	
 	public static void loadTextures(JsonObject resourceFile) {
@@ -36,6 +39,19 @@ public class JSONResourceLoader {
 			HexagonEngine.HE_RES_MANAGER.addResource(texture, new TextureResource(textures.get(texture).getAsString(), true));
 		}
 		
-		logger.info("Loaded "+loadedTextures+" textures");
+		logger.info("Loaded "+loadedTextures+" texture(s)");
+	}
+	
+	public static void loadSounds(JsonObject resourceFile) {
+		JsonObject sounds = resourceFile.get("sounds").getAsJsonObject();
+		
+		int loadedSounds = 0;
+		
+		for (String sound : sounds.keySet()) {
+			loadedSounds++;
+			HexagonEngine.HE_RES_MANAGER.addResource(sound, new SoundResource(sounds.get(sound).getAsString(), true));
+		}
+		
+		logger.info("Loaded "+loadedSounds+" sound(s)");
 	}
 }
