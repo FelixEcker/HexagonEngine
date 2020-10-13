@@ -93,6 +93,26 @@ public class ResourceManager {
 	}
 	
 	/**
+	 * @param name The name of the resource.
+	 * @return The requested resource.
+	 * @author Felix Eckert
+	 * */
+	public SoundResource getSoundResource(String name) {
+		if (this.RESOURCES.get(name) == null)  {
+			logger.warn("The resource \""+name+"\" is missing!");
+			return null;
+		}
+		
+		IResource res = this.RESOURCES.get(name);
+		
+		if (!(res instanceof SoundResource)) {
+			logger.error("The requested resource is not a SoundResource!");
+		}
+		
+		return (SoundResource) res;
+	}
+	
+	/**
 	 * Used for internal logging; Only logs if the field "log" is true
 	 * 
 	 * @param msg The message to be logged
