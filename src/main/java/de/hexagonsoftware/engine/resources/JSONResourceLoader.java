@@ -1,7 +1,5 @@
 package de.hexagonsoftware.engine.resources;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.InputStreamReader;
 
 import org.apache.logging.log4j.LogManager;
@@ -12,11 +10,13 @@ import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
 import de.hexagonsoftware.engine.HexagonEngine;
+import de.hexagonsoftware.engine.util.HEResourceLoadException;
 
 public class JSONResourceLoader {
 	private static Logger logger = LogManager.getLogger("JSONResourceLoader");
 	
-	public static void loadResources(String file) throws FileNotFoundException {
+	public static void loadResources(String file) throws HEResourceLoadException {
+		logger.info("Loading Resources from JSON file "+file);
 		Gson gson = new Gson();
 		JsonReader reader = new JsonReader(new InputStreamReader(HexagonEngine.getGame().getClass().getResourceAsStream(file)));
 		JsonObject resourceFile = gson.fromJson(reader, JsonObject.class);
