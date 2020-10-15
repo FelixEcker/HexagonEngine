@@ -10,7 +10,11 @@ import java.awt.Graphics;
  * */
 public interface IGame {
 	/**
-	 * Is run on gameloop-start
+	 * This function should be used for the Loading of Resources.
+	 * */
+	void init();
+	/**
+	 * Is run on gameloop-start, should be used for creating all GameObjects.
 	 * */
 	void start();
 	/**

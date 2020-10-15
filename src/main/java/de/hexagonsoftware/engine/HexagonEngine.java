@@ -1,5 +1,7 @@
 package de.hexagonsoftware.engine;
 
+import javax.swing.JFrame;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -42,7 +44,7 @@ public class HexagonEngine implements Runnable {
 	/**
 	 * The current fps of the engine
 	 * */
-	private int HE_FPS;
+	private static int HE_FPS;
 	/**
 	 * The fps the game is capped to/targets.
 	 * */
@@ -125,7 +127,7 @@ public class HexagonEngine implements Runnable {
 	 * @param width  The width of the window
 	 * @param height The height of the window
 	 * */
-	public void initialise(String title, int width, int height, boolean resizable) {
+	public void initialise(IGame game, String title, int width, int height, boolean resizable) {
 		logger.info("Initialising engine...");
 		this.HE_WINDOW_TITLE = title;
 		HexagonEngine.HE_WINDOW_WIDTH = width;
@@ -136,7 +138,7 @@ public class HexagonEngine implements Runnable {
 		
 		this.HE_WINDOW = new HEWindow(HE_WINDOW_TITLE, width, height);
 		
-		HE_WINDOW.setDefaultCloseOperation(HE_WINDOW.EXIT_ON_CLOSE);
+		HE_WINDOW.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		HE_WINDOW.setResizable(resizable);
 		HE_WINDOW.setVisible(true);
 
@@ -145,18 +147,18 @@ public class HexagonEngine implements Runnable {
 		
 		HE_WINDOW.getCVS().requestFocus();
 		
+		logger.info("Initialising Game...");
+		HexagonEngine.HE_IGAME_IMP = game;
+		HexagonEngine.HE_IGAME_IMP.init();
+		
 		initialised = true;
 		logger.info("Engine initialised succesfully!");
 	}
 	
 	/**
 	 * Starts the gameloop
-	 * 
-	 * @param game The implementation of the IGame interface (required)
 	 * */
-	public void start(IGame game) {
-		HexagonEngine.HE_IGAME_IMP = game;
-		
+	public void start() {
 		logger.info("Starting Game Loop...");
 		this.HE_THREAD = new Thread(this, "HexagonEngine");
 		HE_THREAD.start();
@@ -243,7 +245,7 @@ public class HexagonEngine implements Runnable {
 		return HE_MAX_UPDATES;
 	}
 
-	public int getHE_FPS() {
+	public static int getHE_FPS() {
 		return HE_FPS;
 	}
 
