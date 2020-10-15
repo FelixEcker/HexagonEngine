@@ -10,7 +10,7 @@ All required Libraries are found in the pom.xml and are automatically downloaded
 If a library is added, this must be done via maven.
 
 ### Required Libraries for using the engine
-Most libraries come packaged with the engine, inorder to keep it as a standalone jar-file.
+Most libraries come packaged with the engine, in order to keep it as a standalone jar-file.
 If this should change, they will be found below.
 
 ## Examples
@@ -19,10 +19,12 @@ Basic examples can be found in the test package of the engine.
 ## Current Features
 The engine currently only features some quite basic things, these are:
 * Sprite Rendering
-	* Layered Sprite Renderering via the LayeredSpriteRenderer class
+	* Layered Sprite Rendering via the LayeredSpriteRenderer class
+* Basic sounds using the javax sampled library
 * Basic Input
-* A extenable GameObject system
+* A extensible GameObject system
 	* Game Object Components
+* Resource Loading from JSON files
 
 ## W.I.P Features
 * Camera System
