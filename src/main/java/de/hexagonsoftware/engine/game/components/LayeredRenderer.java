@@ -72,4 +72,17 @@ public class LayeredRenderer implements IGameObjectComponent {
 		renderersEnabled.set(layer, enabled);
 		renderers.set(layer, render);
 	}
+	
+	/**
+	 * Set the state of the given layer
+	 * @param layer   The index of the layer of which the state should be changed
+	 * @param enabled Sets if the layer should be enabled
+	 * */
+	public void setLayerState(int layer, boolean enabled) {
+		if (renderers.size()-1 < layer) {
+			throw new IndexOutOfBoundsException();
+		}
+		
+		renderersEnabled.set(layer, enabled);
+	}
 }
