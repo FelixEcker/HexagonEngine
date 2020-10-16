@@ -2,29 +2,32 @@ package de.hexagonsoftware.engine.input;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Mouse extends MouseAdapter {
-	public int buttonClicked;
+	/**
+	 * A list of all currently pressed keys.
+	 * */
+	public static List<Integer> buttons = new LinkedList<>();
 	public MouseEvent lastMouseEvent;
-	
-	public Mouse() {
-		buttonClicked = -1;
-	}
 	
 	@Override
 	public void mousePressed(MouseEvent e) {
-		buttonClicked = e.getButton();
+		if (!buttons.contains(e.getButton()))
+			buttons.add(e.getButton());
+		
 		lastMouseEvent = e;
 	}
 	
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		buttonClicked = -1;
+		buttons.remove(buttons.indexOf(e.getButton()));
 		lastMouseEvent = e;
 	}
 	
 	public boolean wasButtonClicked(int button) {
-		return button == buttonClicked;
+		return buttons.contains(button);
 	}
 	
 	public MouseEvent getLastMouseEvent() {
