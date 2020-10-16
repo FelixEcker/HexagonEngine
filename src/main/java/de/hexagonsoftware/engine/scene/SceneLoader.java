@@ -14,13 +14,23 @@ import com.google.gson.stream.JsonReader;
 import de.hexagonsoftware.engine.HexagonEngine;
 import de.hexagonsoftware.engine.game.GameObject;
 
+/**
+ * This class is used for Loading Scenes from JSON files
+ * 
+ * @author Felix Eckert
+ * */
 public class SceneLoader {
 	private static Logger logger = LogManager.getLogger("SceneLoader");
 	
-    public static Scene loadScene(String sceneName) {
-    	logger.info("Loading scene "+sceneName);
+	/**
+	 * Load a scene from a JSON file
+	 * 
+	 * @param sceneFile The path to the file to be loaded
+	 * */
+    public static Scene loadScene(String scenePath) {
+    	logger.info("Loading scene "+scenePath);
     	Gson gson = new Gson();
-		JsonReader reader = new JsonReader(new InputStreamReader(HexagonEngine.getGame().getClass().getResourceAsStream(sceneName)));
+		JsonReader reader = new JsonReader(new InputStreamReader(HexagonEngine.getGame().getClass().getResourceAsStream(scenePath)));
 		JsonObject sceneFile = gson.fromJson(reader, JsonObject.class);
 		
 		Scene scene = new Scene();
