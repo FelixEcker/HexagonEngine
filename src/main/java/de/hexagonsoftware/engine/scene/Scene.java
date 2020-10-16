@@ -82,7 +82,7 @@ public class Scene {
 		gameObjectInstances.add(instance);
 		
 		if (started) {
-			HexagonEngine.HE_GOBJ_MANAGER.addGameObject(name+HexagonEngine.HE_GOBJ_MANAGER.getGOBJ_OBJS().size()+1, instance);
+			HexagonEngine.HE_GOBJ_MANAGER.addGameObject(name+(HexagonEngine.HE_GOBJ_MANAGER.getGOBJ_OBJS().size()+1), instance);
 		}
 	}
 	
@@ -91,7 +91,7 @@ public class Scene {
 	 * */
 	public void start() {
 		for (GameObject obj : gameObjectInstances) {
-			HexagonEngine.HE_GOBJ_MANAGER.addGameObject(obj.getClass().getName()+HexagonEngine.HE_GOBJ_MANAGER.getGOBJ_OBJS().size()+1, obj);
+			HexagonEngine.HE_GOBJ_MANAGER.addGameObject(obj.getClass().getName()+(HexagonEngine.HE_GOBJ_MANAGER.getGOBJ_OBJS().size()+1), obj);
 		}
 		
 		started = true;
