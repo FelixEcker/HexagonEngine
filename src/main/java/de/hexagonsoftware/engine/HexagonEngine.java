@@ -13,6 +13,7 @@ import de.hexagonsoftware.engine.graphics.Renderer;
 import de.hexagonsoftware.engine.input.Keyboard;
 import de.hexagonsoftware.engine.input.Mouse;
 import de.hexagonsoftware.engine.resources.ResourceManager;
+import de.hexagonsoftware.engine.scene.Scene;
 
 /**
  * Hexagon Engine by Hexagon Software
@@ -85,7 +86,14 @@ public class HexagonEngine implements Runnable {
 	public static final Mouse HE_MOUSE_INPUT = new Mouse();
 	/*************************************************/
 	/* Game Variables */
+	/**
+	 * Instance of IGame interface
+	 * */
 	private static IGame HE_IGAME_IMP;
+	/**
+	 * The scene the Engine should render
+	 * */
+	private static Scene HE_IGAME_IMP_SCENE;
 	/**
 	 * Manages the Games Objects (Updates, init, render) ; should be created by the engine
 	 *  */
@@ -299,5 +307,13 @@ public class HexagonEngine implements Runnable {
 	
 	public static Camera getCamera() {
 		return HE_CAMERA;
+	}
+	
+	public static Scene getHE_IGAME_IMP_SCENE() {
+		return HE_IGAME_IMP_SCENE;
+	}
+
+	public static void setHE_IGAME_IMP_SCENE(Scene HE_IGAME_IMP_SCENE) {
+		HexagonEngine.HE_IGAME_IMP_SCENE = HE_IGAME_IMP_SCENE;
 	}
 }
