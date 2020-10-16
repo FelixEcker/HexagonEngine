@@ -29,8 +29,6 @@ public class Main {
 			@Override
 			public void start() {
 				HexagonEngine.HE_GOBJ_MANAGER.setLogging(true);
-				//HexagonEngine.HE_GOBJ_MANAGER.addGameObject("player", new Player());
-				//HexagonEngine.HE_GOBJ_MANAGER.addGameObject("background", new BackgroundRenderer());
 				HexagonEngine.getHE_IGAME_IMP_SCENE().start();
 			}
 			
