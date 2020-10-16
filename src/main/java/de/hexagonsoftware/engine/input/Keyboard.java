@@ -33,13 +33,10 @@ public class Keyboard extends KeyAdapter {
 	}
 	
 	/**
-	 * @oaram key      The key to be checked if pressed.
+	 * @param key      The key to be checked if pressed.
 	 * @return Returns true if the given key is pressed
 	 * */
-	public boolean isKeyDown(char key) {
-		if (keys.contains(key))
-			return true;
-		
-		return false;
+	public boolean isKeyDown(char key) {	
+		return keys.contains(key);
 	}
 }
