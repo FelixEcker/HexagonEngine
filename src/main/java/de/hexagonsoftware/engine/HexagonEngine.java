@@ -14,6 +14,7 @@ import de.hexagonsoftware.engine.input.Keyboard;
 import de.hexagonsoftware.engine.input.Mouse;
 import de.hexagonsoftware.engine.resources.ResourceManager;
 import de.hexagonsoftware.engine.scene.Scene;
+import de.hexagonsoftware.engine.util.EngineConfig;
 
 /**
  * Hexagon Engine by Hexagon Software
@@ -95,6 +96,11 @@ public class HexagonEngine implements Runnable {
 	 * */
 	private static Scene HE_IGAME_IMP_SCENE;
 	/**
+	 * The engine config
+	 * Only exists if the engine was initialised using a config.json
+	 * */
+	public static EngineConfig HE_CONFIG;
+	/**
 	 * Manages the Games Objects (Updates, init, render) ; should be created by the engine
 	 *  */
 	public static final GameObjectManager HE_GOBJ_MANAGER = GameObjectManager.getInstance();
@@ -131,6 +137,7 @@ public class HexagonEngine implements Runnable {
 	/**
 	 * Initialises the Engine. Must be executed before Game Loop start.
 	 * 
+	 * @param game   The instance of the IGame interface to be used.
 	 * @param title  The title of the window
 	 * @param width  The width of the window
 	 * @param height The height of the window
@@ -157,6 +164,41 @@ public class HexagonEngine implements Runnable {
 		
 		logger.info("Initialising Game...");
 		HexagonEngine.HE_IGAME_IMP = game;
+		HexagonEngine.HE_IGAME_IMP.init();
+		
+		initialised = true;
+		logger.info("Engine initialised succesfully!");
+	}
+	
+	/**
+	 * Initialises the Engine. Must be executed before Game Loop start.
+	 * 
+	 * @param game           The instance of the IGame interface to be used.
+	 * @param configFilePath The path to the config file.
+	 * */
+	public void initialise(IGame game, String configFilePath) {
+		logger.info("Initialising engine...");
+		HexagonEngine.HE_IGAME_IMP = game;
+		HE_CONFIG = new EngineConfig(configFilePath);
+		this.HE_WINDOW_TITLE = HE_CONFIG.getWindowTitle();
+		HexagonEngine.HE_WINDOW_WIDTH = HE_CONFIG.getWindowWidth();
+		HexagonEngine.HE_WINDOW_HEIGHT = HE_CONFIG.getWindowHeight();
+		this.HE_WINDOW_RESIZABLE = HE_CONFIG.getWindowResizable();
+		
+		logger.info("Creating the Window...");
+		
+		this.HE_WINDOW = new HEWindow(HE_WINDOW_TITLE, HexagonEngine.HE_WINDOW_WIDTH, HexagonEngine.HE_WINDOW_HEIGHT);
+		
+		HE_WINDOW.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		HE_WINDOW.setResizable(HE_WINDOW_RESIZABLE);
+		HE_WINDOW.setVisible(true);
+
+		HE_WINDOW.getCVS().addMouseListener(HE_MOUSE_INPUT);
+		HE_WINDOW.getCVS().addKeyListener(HE_KEY_INPUT);
+		
+		HE_WINDOW.getCVS().requestFocus();
+		
+		logger.info("Initialising Game...");
 		HexagonEngine.HE_IGAME_IMP.init();
 		
 		initialised = true;

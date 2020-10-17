@@ -35,8 +35,8 @@ public class Main {
 			@Override
 			public void update() {
 				if (HexagonEngine.HE_MOUSE_INPUT.wasButtonClicked(1)) {
-					HexagonEngine.HE_GOBJ_MANAGER.getGOBJ_OBJS().get("player").setX(0);
-					HexagonEngine.HE_GOBJ_MANAGER.getGOBJ_OBJS().get("player").setY(0);
+					HexagonEngine.HE_GOBJ_MANAGER.getGOBJ_OBJS().get("de.hexagonsoftware.test.Player2").setX(0);
+					HexagonEngine.HE_GOBJ_MANAGER.getGOBJ_OBJS().get("de.hexagonsoftware.test.Player2").setY(0);
 					System.out.println("A");
 				}
 			}
@@ -45,7 +45,7 @@ public class Main {
 			public void render(Graphics g) {
 			}
 
-		}, "test", 1920, 1080, false);
+		}, "/config.json");
 		engine.start();
 	}
 }

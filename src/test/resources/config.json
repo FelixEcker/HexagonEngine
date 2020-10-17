@@ -1,0 +1,10 @@
+{
+	"window": {
+		"width":1920,
+		"height":1080,
+		"title":"test",
+		"resizable":true
+	},
+	"assetsroot":"/",
+	"resourcesfile":"resources.json"
+}
