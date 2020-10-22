@@ -3,7 +3,7 @@
 		"width":1920,
 		"height":1080,
 		"title":"test",
-		"resizable":true
+		"resizable":false
 	},
 	"assetsroot":"/",
 	"resourcesfile":"resources.json"
