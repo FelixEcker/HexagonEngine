@@ -93,7 +93,7 @@ public class GameObjectManager {
 	 * */
 	public void render(Graphics g) {
 		if (BACKGROUND_RENDERER_NAME != null)
-		((GameObject) GOBJ_OBJS.get(BACKGROUND_RENDERER_NAME)).render(g);
+			((GameObject) GOBJ_OBJS.get(BACKGROUND_RENDERER_NAME)).render(g);
 		
 		for (Object obj : this.GOBJ_OBJS.values()) {
 			if (obj == GOBJ_OBJS.get(BACKGROUND_RENDERER_NAME))
