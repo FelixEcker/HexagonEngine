@@ -28,6 +28,7 @@ public class Renderer {
 		g.clearRect(0, 0, window.getWidth(), window.getWidth());
 		
 		HexagonEngine.HE_GOBJ_MANAGER.render(g);
+		HexagonEngine.getHE_HUD_MANAGER().render(g);
 		game.render(g);
 		
 		g.dispose();

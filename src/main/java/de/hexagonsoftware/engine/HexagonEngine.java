@@ -10,6 +10,7 @@ import de.hexagonsoftware.engine.game.GameObjectManager;
 import de.hexagonsoftware.engine.game.IGame;
 import de.hexagonsoftware.engine.graphics.HEWindow;
 import de.hexagonsoftware.engine.graphics.Renderer;
+import de.hexagonsoftware.engine.hud.HUDManager;
 import de.hexagonsoftware.engine.input.Keyboard;
 import de.hexagonsoftware.engine.input.Mouse;
 import de.hexagonsoftware.engine.resources.ResourceManager;
@@ -95,6 +96,10 @@ public class HexagonEngine implements Runnable {
 	 * The scene the Engine should render
 	 * */
 	private static Scene HE_IGAME_IMP_SCENE;
+	/**
+	 * The HUDManager used for managing huds
+	 * */
+	private static HUDManager HE_HUD_MANAGER = new HUDManager();
 	/**
 	 * The engine config
 	 * Only exists if the engine was initialised using a config.json
@@ -277,6 +282,7 @@ public class HexagonEngine implements Runnable {
 	public void tick() {
 		HE_GOBJ_MANAGER.update();
 		HE_IGAME_IMP.update();
+		HE_HUD_MANAGER.update();
 	}
 
 	public static boolean isHE_RUNNING() {
@@ -357,5 +363,9 @@ public class HexagonEngine implements Runnable {
 
 	public static void setHE_IGAME_IMP_SCENE(Scene HE_IGAME_IMP_SCENE) {
 		HexagonEngine.HE_IGAME_IMP_SCENE = HE_IGAME_IMP_SCENE;
+	}
+	
+	public static HUDManager getHE_HUD_MANAGER() {
+		return HE_HUD_MANAGER;
 	}
 }
