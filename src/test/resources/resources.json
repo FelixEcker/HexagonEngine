@@ -8,5 +8,12 @@
 	},
 	"sounds": {
 		"splash":"sound/splash.wav"
+	},
+	"fonts": {
+		"Pixelart": {
+			"path":"pixelart.ttf",
+			"size":25.0,
+			"type":0
+		}
 	}
 }

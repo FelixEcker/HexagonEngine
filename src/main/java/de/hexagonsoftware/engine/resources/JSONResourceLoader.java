@@ -28,6 +28,9 @@ public class JSONResourceLoader {
 		if (resourceFile.has("sounds")) {
 			loadSounds(resourceFile);
 		}
+		if (resourceFile.has("fonts")) {
+			loadFonts(resourceFile);
+		}
 	}
 	
 	public static void loadTextures(JsonObject resourceFile) {
@@ -62,5 +65,23 @@ public class JSONResourceLoader {
 		}
 		
 		logger.info("Loaded "+loadedSounds+" sound(s)");
+	}
+	
+	public static void loadFonts(JsonObject resourceFile) {
+		JsonObject fonts    = resourceFile.get("fonts").getAsJsonObject();
+		String assetsRoot   = HexagonEngine.getEngineConfig().getAssetsRoot();
+		
+		if (assetsRoot == null)
+			assetsRoot = "";
+		
+		int loadedFonts = 0;
+		
+		for (String font : fonts.keySet()) {
+			loadedFonts++;
+			JsonObject fontObject = fonts.get(font).getAsJsonObject();
+			HexagonEngine.HE_RES_MANAGER.addResource(font, new FontResource(assetsRoot+fontObject.get("path").getAsString(), fontObject.get("size").getAsFloat(), fontObject.get("type").getAsInt(), true));
+		}
+		
+		logger.info("Loaded "+loadedFonts+" font(s)");
 	}
 }
