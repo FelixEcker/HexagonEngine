@@ -125,8 +125,8 @@ public class ResourceManager {
 		
 		IResource res = this.RESOURCES.get(name);
 		
-		if (!(res instanceof SoundResource)) {
-			logger.error("The requested resource is not a SoundResource!");
+		if (!(res instanceof FontResource)) {
+			logger.error("The requested resource is not a FontResource!");
 		}
 		
 		return (FontResource) res;

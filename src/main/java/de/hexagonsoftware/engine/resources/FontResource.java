@@ -35,7 +35,7 @@ public class FontResource implements IResource {
 	public void load() {
 		Class cls = useGameResourceDir ? HexagonEngine.getGame().getClass() : this.getClass();
 		try {
-			font = Font.createFont(type, cls.getResourceAsStream("/pixelart.ttf")).deriveFont(size);
+			font = Font.createFont(type, cls.getResourceAsStream(path)).deriveFont(size);
 		} catch (FontFormatException | IOException e) {
 			e.printStackTrace();
 		}
