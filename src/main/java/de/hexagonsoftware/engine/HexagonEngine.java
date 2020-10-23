@@ -368,4 +368,8 @@ public class HexagonEngine implements Runnable {
 	public static HUDManager getHE_HUD_MANAGER() {
 		return HE_HUD_MANAGER;
 	}
+
+	public static EngineConfig getEngineConfig() {
+		return HE_CONFIG;
+	}
 }

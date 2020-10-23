@@ -10,6 +10,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
 import de.hexagonsoftware.engine.HexagonEngine;
+import de.hexagonsoftware.engine.util.EngineConfig;
 import de.hexagonsoftware.engine.util.HEResourceLoadException;
 
 public class JSONResourceLoader {
@@ -31,12 +32,16 @@ public class JSONResourceLoader {
 	
 	public static void loadTextures(JsonObject resourceFile) {
 		JsonObject textures = resourceFile.get("textures").getAsJsonObject();
+		String assetsRoot   = HexagonEngine.getEngineConfig().getAssetsRoot();
+		
+		if (assetsRoot == null)
+			assetsRoot = "";
 		
 		int loadedTextures = 0;
 		
 		for (String texture : textures.keySet()) {
 			loadedTextures++;
-			HexagonEngine.HE_RES_MANAGER.addResource(texture, new TextureResource(textures.get(texture).getAsString(), true));
+			HexagonEngine.HE_RES_MANAGER.addResource(texture, new TextureResource(assetsRoot+textures.get(texture).getAsString(), true));
 		}
 		
 		logger.info("Loaded "+loadedTextures+" texture(s)");
@@ -44,12 +49,18 @@ public class JSONResourceLoader {
 	
 	public static void loadSounds(JsonObject resourceFile) {
 		JsonObject sounds = resourceFile.get("sounds").getAsJsonObject();
+		String assetsRoot   = HexagonEngine.getEngineConfig().getAssetsRoot();
+		
+		if (assetsRoot == null)
+			assetsRoot = "";
+		
+		System.out.println(assetsRoot);
 		
 		int loadedSounds = 0;
 		
 		for (String sound : sounds.keySet()) {
 			loadedSounds++;
-			HexagonEngine.HE_RES_MANAGER.addResource(sound, new SoundResource(sounds.get(sound).getAsString(), true));
+			HexagonEngine.HE_RES_MANAGER.addResource(sound, new SoundResource(assetsRoot+sounds.get(sound).getAsString(), true));
 		}
 		
 		logger.info("Loaded "+loadedSounds+" sound(s)");

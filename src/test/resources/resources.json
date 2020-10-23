@@ -1,10 +1,10 @@
 {
 	"__comment":"This mainly serves as an example for a Resource JSON file",
 	"textures":{
-		"CharacterFRONT":"/textures/player_front.png",
-		"CharacterBACK":"/textures/player_back.png",
-		"CharacterLEFT":"/textures/player_left.png",
-		"CharacterRIGHT":"/textures/player_right.png"
+		"CharacterFRONT":"textures/player_front.png",
+		"CharacterBACK":"textures/player_back.png",
+		"CharacterLEFT":"textures/player_left.png",
+		"CharacterRIGHT":"textures/player_right.png"
 	},
 	"sounds": {
 		"splash":"sound/splash.wav"
