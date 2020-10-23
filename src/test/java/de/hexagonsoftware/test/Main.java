@@ -18,24 +18,16 @@ public class Main {
 	public static void main(String[] args) {
 		HexagonEngine engine = new HexagonEngine(60);
 		engine.initialise(new IGame() {
-			private Font font;
-			
 			@Override
 			public void init() {
 				HexagonEngine.HE_RES_MANAGER.setLogging(true);
 				try {
-					JSONResourceLoader.loadResources("/resources.json");
+					JSONResourceLoader.loadResources("/assets/resources.json");
 				} catch (HEResourceLoadException e) {
 					e.printStackTrace();
 				}
 				
-				try {
-					font = Font.createFont(Font.PLAIN, this.getClass().getResourceAsStream("/pixelart.ttf")).deriveFont(25f);
-				} catch (FontFormatException | IOException e) {
-					e.printStackTrace();
-				}
-				
-				Scene mainScene = SceneLoader.loadScene("/scene.json");
+				Scene mainScene = SceneLoader.loadScene("/assets/scene.json");
 				HexagonEngine.setHE_IGAME_IMP_SCENE(mainScene);
 			}
 			
@@ -43,7 +35,7 @@ public class Main {
 			public void start() {
 				HexagonEngine.HE_GOBJ_MANAGER.setLogging(true);
 				HexagonEngine.getHE_IGAME_IMP_SCENE().start();
-				HexagonEngine.getHE_HUD_MANAGER().addHUD("test", new TestHud(font));
+				HexagonEngine.getHE_HUD_MANAGER().addHUD("test", new TestHud());
 				HexagonEngine.getHE_HUD_MANAGER().setActiveHUD("test");
 				HexagonEngine.getHE_HUD_MANAGER().activateHUD();
 			}
@@ -53,15 +45,11 @@ public class Main {
 				if (HexagonEngine.HE_MOUSE_INPUT.wasButtonClicked(1)) {
 					HexagonEngine.HE_GOBJ_MANAGER.getGOBJ_OBJS().get("de.hexagonsoftware.test.Player2").setX(0);
 					HexagonEngine.HE_GOBJ_MANAGER.getGOBJ_OBJS().get("de.hexagonsoftware.test.Player2").setY(0);
-					System.out.println("A");
 				}
 			}
 
 			@Override
 			public void render(Graphics g) {
-				g.setColor(Color.RED);
-				g.setFont(font);
-				g.drawString("Test", 100, 100);
 			}
 
 		}, "/config.json");

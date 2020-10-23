@@ -5,6 +5,6 @@
 		"title":"test",
 		"resizable":false
 	},
-	"assetsroot":"/",
+	"assetsroot":"/assets/",
 	"resourcesfile":"resources.json"
 }
