@@ -54,8 +54,6 @@ public class JSONResourceLoader {
 		if (assetsRoot == null)
 			assetsRoot = "";
 		
-		System.out.println(assetsRoot);
-		
 		int loadedSounds = 0;
 		
 		for (String sound : sounds.keySet()) {
