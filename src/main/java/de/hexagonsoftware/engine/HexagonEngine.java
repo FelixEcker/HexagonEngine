@@ -61,7 +61,7 @@ public class HexagonEngine implements Runnable {
 	/**
 	 * The Window.
 	 * */
-	private HEWindow HE_WINDOW;
+	private static HEWindow HE_WINDOW;
 	/**
 	 * The name the window is titled
 	 * */
@@ -326,11 +326,11 @@ public class HexagonEngine implements Runnable {
 	}
 
 	public static int getWidth() {
-		return HE_WINDOW_WIDTH;
+		return HE_WINDOW.getWidth();
 	}
 
 	public static int getHeight() {
-		return HE_WINDOW_HEIGHT;
+		return HE_WINDOW.getHeight();
 	}
 	
 	public boolean isHE_WINDOW_RESIZABLE() {
