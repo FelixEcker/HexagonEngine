@@ -3,14 +3,16 @@ package de.hexagonsoftware.engine.hud;
 import java.awt.Graphics;
 import java.util.HashMap;
 
+import de.hexagonsoftware.engine.HexagonEngine;
+
 public class HUDManager {
 	private HashMap<String, HUD> huds;
 	private String activeHUD;
 	private boolean hudActive = false;
 	
 	public HUDManager() {
-		huds = new HashMap<>();
-		activeHUD = "";
+		this.huds = new HashMap<>();
+		this.activeHUD = "";
 	}
 	
 	public void addHUD(String name, HUD hud) {
