@@ -29,7 +29,7 @@ public class Sound {
     private Clip clip;
 
     /**
-     * @param URL path to the sound file that the Sound-Object instance should correspond to.
+     * @param url path to the sound file that the Sound-Object instance should correspond to.
      * @author Felix Eckert
      * */
     public Sound(URL url) {

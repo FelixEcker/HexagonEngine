@@ -23,6 +23,8 @@ public class Animation {
 	 * 
 	 * @param frames  An array containing all the TextureResources for the Animation (in order)
 	 * @param timings An array containing the amount of ms for the corresponding frame.
+	 * @param x The X coordinate for the Animation
+	 * @param y The Y coordinate for the Animation
 	 * */	
 	public Animation(TextureResource[] frames, long[] timings, int x, int y) {
 		this.frames  = frames;

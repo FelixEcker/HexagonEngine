@@ -143,10 +143,11 @@ public class HexagonEngine implements Runnable {
 	/**
 	 * Initialises the Engine. Must be executed before Game Loop start.
 	 * 
-	 * @param game   The instance of the IGame interface to be used.
-	 * @param title  The title of the window
-	 * @param width  The width of the window
-	 * @param height The height of the window
+	 * @param game   	The instance of the IGame interface to be used.
+	 * @param title  	The title of the window
+	 * @param width  	The width of the window
+	 * @param height 	The height of the window
+	 * @param resizable If the window should be resizable
 	 * */
 	public void initialise(IGame game, String title, int width, int height, boolean resizable) {
 		logger.info("Initialising engine...");

@@ -20,6 +20,7 @@ public interface IGameObjectComponent {
 	void update();
 	/**
 	 * This function is called by the Renderer#render method.
+	 * @param g The Graphics object instance used for rendering
 	 * */
 	void render(Graphics g);
 }

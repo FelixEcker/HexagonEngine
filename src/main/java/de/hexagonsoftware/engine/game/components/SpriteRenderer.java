@@ -34,7 +34,9 @@ public class SpriteRenderer implements IGameObjectComponent {
 	private boolean useObjectCoords;
 	
 	/**
-	 * @param textureName The name of the TextureResource to be used in rendering
+	 * @param textureName 	  The name of the TextureResource to be used in rendering
+	 * @param parentObj  	  The GameObject this instance was added to
+	 * @param useObjectCoords Sets if the renderer should use the Coordinates of the Parent Object for rendering
 	 * */
 	public SpriteRenderer(GameObject parentObj, String textureName, boolean useObjectCoords) {
 		this.texture = HexagonEngine.HE_RES_MANAGER.getTextureResource(textureName);

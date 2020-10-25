@@ -10,12 +10,22 @@ import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
 import de.hexagonsoftware.engine.HexagonEngine;
-import de.hexagonsoftware.engine.util.EngineConfig;
 import de.hexagonsoftware.engine.util.HEResourceLoadException;
 
+/**
+ * Used for loading Resources from a JSON file
+ * 
+ * @author Felix Eckert
+ * */
 public class JSONResourceLoader {
 	private static Logger logger = LogManager.getLogger("JSONResourceLoader");
 	
+	/**
+	 * Loads all resources listed in the specified file.
+	 * 
+	 * @param file The JSON file from which to load them.
+	 * @throws HEResourceLoadException
+	 * */
 	public static void loadResources(String file) throws HEResourceLoadException {
 		logger.info("Loading Resources from JSON file "+file);
 		Gson gson = new Gson();
@@ -32,7 +42,10 @@ public class JSONResourceLoader {
 			loadFonts(resourceFile);
 		}
 	}
-	
+
+	/**
+	 * @param resourceFile The resourceFile from which to grab the texture list
+	 * */
 	public static void loadTextures(JsonObject resourceFile) {
 		JsonObject textures = resourceFile.get("textures").getAsJsonObject();
 		String assetsRoot   = HexagonEngine.getEngineConfig().getAssetsRoot();
@@ -50,6 +63,9 @@ public class JSONResourceLoader {
 		logger.info("Loaded "+loadedTextures+" texture(s)");
 	}
 	
+	/**
+	 * @param resourceFile The resourceFile from which to grab the sound list
+	 * */
 	public static void loadSounds(JsonObject resourceFile) {
 		JsonObject sounds = resourceFile.get("sounds").getAsJsonObject();
 		String assetsRoot   = HexagonEngine.getEngineConfig().getAssetsRoot();
@@ -67,6 +83,9 @@ public class JSONResourceLoader {
 		logger.info("Loaded "+loadedSounds+" sound(s)");
 	}
 	
+	/**
+	 * @param resourceFile The resourceFile from which to grab the font list
+	 * */
 	public static void loadFonts(JsonObject resourceFile) {
 		JsonObject fonts    = resourceFile.get("fonts").getAsJsonObject();
 		String assetsRoot   = HexagonEngine.getEngineConfig().getAssetsRoot();

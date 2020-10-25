@@ -25,7 +25,8 @@ public class SceneLoader {
 	/**
 	 * Load a scene from a JSON file
 	 * 
-	 * @param sceneFile The path to the file to be loaded
+	 * @param scenePath The path to the file to be loaded
+	 * @return The loaded scene
 	 * */
     public static Scene loadScene(String scenePath) {
     	logger.info("Loading scene "+scenePath);

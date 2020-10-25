@@ -49,7 +49,7 @@ public class Scene {
      * addGameObject function but with this function, it can be done with pre-existing
      * HashMaps.
      * 
-     * @param object The HashMap of objects to be added
+     * @param objects The HashMap of objects to be added
      * */
 	public void setGameObjects(HashMap<String, GameObject> objects) {
 		this.gameObjects = objects;

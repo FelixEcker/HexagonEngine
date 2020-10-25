@@ -90,6 +90,7 @@ public class GameObjectManager {
 	
 	/**
 	 * Calls the render function in every Game Object
+	 * @param g The Graphics object instance used for rendering
 	 * */
 	public void render(Graphics g) {
 		if (BACKGROUND_RENDERER_NAME != null)
@@ -127,7 +128,7 @@ public class GameObjectManager {
 	}
 	
 	/**
-	 * Sets if this class should log or not.
+	 * @param b Sets if this class should log or not.
 	 * */
 	public void setLogging(boolean b) { this.log = b; }
 

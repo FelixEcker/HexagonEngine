@@ -156,7 +156,7 @@ public class ResourceManager {
 	}
 	
 	/**
-	 * Sets if this class should log or not.
+	 * @param b Sets if this class should log or not.
 	 * */
 	public void setLogging(boolean b) { this.log = b; }
 }
