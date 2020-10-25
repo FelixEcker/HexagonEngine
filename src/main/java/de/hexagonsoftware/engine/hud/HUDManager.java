@@ -21,8 +21,14 @@ public class HUDManager {
 		activeHUD = name;
 	}
 	
-	public void activateHUD () { hudActive = true; }
-	public void deactivateHUD () { hudActive = false; }
+	public void activateHUD () { 
+		hudActive = true;
+		huds.get(activeHUD).activate();
+	}
+	public void deactivateHUD () { 
+		hudActive = false;
+		huds.get(activeHUD).deactivate();
+	}
 	
 	public void render(Graphics g) {
 		if (hudActive) {
