@@ -2,6 +2,7 @@ package de.hexagonsoftware.engine.game;
 
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
+import java.awt.event.KeyEvent;
 import java.util.HashMap;
 
 /**
@@ -71,9 +72,14 @@ public class GameObject {
 	}
 	
 	public void clicked(MouseEvent e) {}
+	public void keyDown(KeyEvent e) {}
 	
 	public void addComponent(String name, IGameObjectComponent comp) {
 		this.components.put(name, comp);
+	}
+	
+	public void removeComponent(String name) {
+		this.components.remove(name);
 	}
 
 	public int getX() {

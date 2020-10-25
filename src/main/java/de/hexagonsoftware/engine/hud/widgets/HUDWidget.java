@@ -9,8 +9,8 @@ import java.awt.Graphics;
  * @author Felix Eckert
  * */
 public class HUDWidget {
-	private int x, y;
-	private int width, height;
+	protected int x, y;
+	protected int width, height;
 	
 	public HUDWidget(int x, int y) {
 		this.x = x;
