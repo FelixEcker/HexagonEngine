@@ -5,6 +5,7 @@ import java.awt.Graphics;
 
 import de.hexagonsoftware.engine.HexagonEngine;
 import de.hexagonsoftware.engine.hud.HUD;
+import de.hexagonsoftware.engine.hud.widgets.ActionHandler;
 import de.hexagonsoftware.engine.hud.widgets.ImageButton;
 import de.hexagonsoftware.engine.hud.widgets.TextBox;
 
@@ -24,7 +25,12 @@ public class TestHud extends HUD {
 				"E",
 				"F"
 		}, new Font("Courier New", Font.PLAIN, 25));
-		ib = new ImageButton("CharacterFRONT", 100, 100);
+		ib = new ImageButton("CharacterFRONT", 100, 100, new ActionHandler() {
+			@Override
+			public void actionPerformed() {
+				System.out.println("I was hit");
+			}	
+		});
 		ib.setHeightScaleFactor(20);
 		ib.setWidthScaleFactor(20);
 	}

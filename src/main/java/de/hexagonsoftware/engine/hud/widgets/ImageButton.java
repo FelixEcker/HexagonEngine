@@ -10,13 +10,15 @@ public class ImageButton extends HUDWidget {
 	private BufferedImage texture;
 	private int widthScaleFactor;
 	private int heightScaleFactor;
+	private ActionHandler actionHandler;
 	
-	public ImageButton(String texture, int x, int y) {
+	public ImageButton(String texture, int x, int y, ActionHandler actionHandler) {
 		super(x, y);
 		
 		this.texture = HexagonEngine.HE_RES_MANAGER.getTextureResource(texture).getImage();
 		this.widthScaleFactor = HexagonEngine.getWidth()/this.texture.getWidth();
 		this.heightScaleFactor = HexagonEngine.getHeight()/this.texture.getHeight();
+		this.actionHandler = actionHandler;
 	}
 
 	@Override
@@ -34,7 +36,7 @@ public class ImageButton extends HUDWidget {
 			Rectangle clickBounds  = new Rectangle(HexagonEngine.HE_MOUSE_INPUT.lastMouseEvent.getX(), HexagonEngine.HE_MOUSE_INPUT.lastMouseEvent.getY(), 1, 1);
 			
 			if (clickBounds.intersects(buttonBounds)) {
-				System.out.println("ButtonWasHit");
+				actionHandler.actionPerformed();
 			}
 		}
 	}
