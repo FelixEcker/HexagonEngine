@@ -130,7 +130,7 @@ public class GameObjectManager {
 	/**
 	 * @param b Sets if this class should log or not.
 	 * */
-	public void setLogging(boolean b) { this.log = b; }
+	public void setLogging(boolean b) { GameObjectManager.log = b; }
 
 	public HashMap<String, GameObject> getGOBJ_OBJS() {
 		return GOBJ_OBJS;

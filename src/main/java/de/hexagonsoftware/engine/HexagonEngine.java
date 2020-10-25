@@ -16,7 +16,6 @@ import de.hexagonsoftware.engine.input.Mouse;
 import de.hexagonsoftware.engine.resources.ResourceManager;
 import de.hexagonsoftware.engine.scene.Scene;
 import de.hexagonsoftware.engine.util.EngineConfig;
-import de.hexagonsoftware.engine.util.LanguageManager;
 
 /**
  * Hexagon Engine by Hexagon Software
@@ -137,7 +136,7 @@ public class HexagonEngine implements Runnable {
 		this.HE_CURRENT_TICKS = 0;
 		this.HE_FPS_CAP = fpsCap;
 		this.HE_TARGET_TIME = HE_TARGET_TIME / HE_FPS_CAP;
-		this.HE_FPS = 0;
+		HexagonEngine.HE_FPS = 0;
 	}
 	
 	/**
@@ -158,7 +157,7 @@ public class HexagonEngine implements Runnable {
 		
 		logger.info("Creating the Window...");
 		
-		this.HE_WINDOW = new HEWindow(HE_WINDOW_TITLE, width, height);
+		HexagonEngine.HE_WINDOW = new HEWindow(HE_WINDOW_TITLE, width, height);
 		
 		HE_WINDOW.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		HE_WINDOW.setResizable(resizable);
@@ -194,7 +193,7 @@ public class HexagonEngine implements Runnable {
 		
 		logger.info("Creating the Window...");
 		
-		this.HE_WINDOW = new HEWindow(HE_WINDOW_TITLE, HexagonEngine.HE_WINDOW_WIDTH, HexagonEngine.HE_WINDOW_HEIGHT);
+		HexagonEngine.HE_WINDOW = new HEWindow(HE_WINDOW_TITLE, HexagonEngine.HE_WINDOW_WIDTH, HexagonEngine.HE_WINDOW_HEIGHT);
 		
 		HE_WINDOW.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		HE_WINDOW.setResizable(HE_WINDOW_RESIZABLE);
@@ -260,7 +259,7 @@ public class HexagonEngine implements Runnable {
 			frames++;
 			
 			if (System.currentTimeMillis() - timer > 1000) {
-				this.HE_FPS = frames;
+				HexagonEngine.HE_FPS = frames;
 				timer += 1000;
 				frames = 0;
 			}

@@ -30,7 +30,7 @@ public class TextureResource implements IResource {
 	 * */
 	public void load() {
 		try {
-			Class cls = useGameResourceDir ? HexagonEngine.getGame().getClass() : this.getClass();
+			Class<?> cls = useGameResourceDir ? HexagonEngine.getGame().getClass() : this.getClass();
 			this.img = ImageLoader.loadImage(cls.getResource(path));
 		} catch (HEResourceLoadException e) {
 			this.img = ((TextureResource) ResourceManager.getInstance().getResource(ResourceManager.RES_MANAGER_STD_MTNAME)).getImage();

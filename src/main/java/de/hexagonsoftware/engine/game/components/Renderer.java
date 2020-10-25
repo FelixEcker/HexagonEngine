@@ -1,7 +1,6 @@
 package de.hexagonsoftware.engine.game.components;
 
 import java.awt.Graphics;
-import java.util.List;
 
 import de.hexagonsoftware.engine.game.IGameObjectComponent;
 

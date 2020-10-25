@@ -1,15 +1,10 @@
 package de.hexagonsoftware.test;
  
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.FontFormatException;
 import java.awt.Graphics;
-import java.io.IOException;
 
 import de.hexagonsoftware.engine.HexagonEngine;
 import de.hexagonsoftware.engine.game.IGame;
 import de.hexagonsoftware.engine.resources.JSONResourceLoader;
-import de.hexagonsoftware.engine.resources.TextureResource;
 import de.hexagonsoftware.engine.scene.Scene;
 import de.hexagonsoftware.engine.scene.SceneLoader;
 import de.hexagonsoftware.engine.util.HEResourceLoadException;

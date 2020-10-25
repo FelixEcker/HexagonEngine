@@ -10,7 +10,6 @@ import de.hexagonsoftware.engine.resources.TextureResource;
 
 public class Player extends GameObject {	
 	private float movementSpeed = 5.0f;
-	private SpriteRenderer sr;
 	
 	@Override
 	public void start() {

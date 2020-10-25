@@ -27,8 +27,6 @@ public class Rigidbody implements IGameObjectComponent {
 	
 	@Override
 	public void start() {
-		int width = parentObj.getWidth();
-		int height = parentObj.getHeight();
 	}
 
 	@Override

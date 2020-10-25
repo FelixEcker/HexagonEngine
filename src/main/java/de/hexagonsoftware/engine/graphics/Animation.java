@@ -14,7 +14,6 @@ public class Animation {
 	private long[] timings;
 	private int x, y;
 	private int currentFrame = 0;
-	private boolean playing = false;
 	
 	private long timer;
 	

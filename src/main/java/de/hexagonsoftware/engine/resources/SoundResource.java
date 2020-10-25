@@ -32,7 +32,7 @@ public class SoundResource implements IResource {
 	 * @throws HEResourceLoadException
 	 * */
 	public void load() throws HEResourceLoadException {
-		Class cls = useGameResourceDir ? HexagonEngine.getGame().getClass() : this.getClass();
+		Class<?> cls = useGameResourceDir ? HexagonEngine.getGame().getClass() : this.getClass();
 		this.sound = new Sound(cls.getResource(path));
 	}
 	
