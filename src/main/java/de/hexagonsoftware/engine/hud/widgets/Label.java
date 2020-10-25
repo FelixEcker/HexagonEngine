@@ -6,6 +6,11 @@ import java.awt.Point;
 
 import de.hexagonsoftware.engine.HexagonEngine;
 
+/**
+ * A Basic Widget for rendering Strings to a specific alignment.
+ * 
+ * @author Felix Eckert
+ * */
 public class Label extends HUDWidget {
 	public static int 
 	TOP_LEFT      = 0, 
@@ -17,9 +22,9 @@ public class Label extends HUDWidget {
 	CENTER 		  = 6
 	;
 	
-	private int alignment = -1;
-	private Font font;
-	private String text;
+	protected int alignment = -1;
+	protected Font font;
+	protected String text;
 	
 	public Label(int x, int y, String text, Font font) {
 		super(x, y);
