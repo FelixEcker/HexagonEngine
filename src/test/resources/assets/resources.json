@@ -4,7 +4,8 @@
 		"CharacterFRONT":"textures/player_front.png",
 		"CharacterBACK":"textures/player_back.png",
 		"CharacterLEFT":"textures/player_left.png",
-		"CharacterRIGHT":"textures/player_right.png"
+		"CharacterRIGHT":"textures/player_right.png",
+		"ButtonHover":"textures/button_hover.png"
 	},
 	"sounds": {
 		"splash":"sound/splash.wav"

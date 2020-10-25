@@ -25,7 +25,7 @@ public class TestHud extends HUD {
 				"E",
 				"F"
 		}, new Font("Courier New", Font.PLAIN, 25));
-		ib = new ImageButton("CharacterFRONT", 100, 100, new ActionHandler() {
+		ib = new ImageButton("CharacterFRONT", "ButtonHover", 100, 100, new ActionHandler() {
 			@Override
 			public void actionPerformed() {
 				System.out.println("I was hit");
