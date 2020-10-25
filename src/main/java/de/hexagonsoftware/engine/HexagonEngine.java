@@ -16,6 +16,7 @@ import de.hexagonsoftware.engine.input.Mouse;
 import de.hexagonsoftware.engine.resources.ResourceManager;
 import de.hexagonsoftware.engine.scene.Scene;
 import de.hexagonsoftware.engine.util.EngineConfig;
+import de.hexagonsoftware.engine.util.LanguageManager;
 
 /**
  * Hexagon Engine by Hexagon Software
