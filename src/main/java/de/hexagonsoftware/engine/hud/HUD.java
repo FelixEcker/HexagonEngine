@@ -13,6 +13,14 @@ public class HUD {
 		widgets = new LinkedList<>();
 	}
 	
+	public void activate() {
+		
+	}
+	
+	public void deactivate() {
+		
+	}
+	
 	public void render(Graphics g) {
 		widgets.forEach(widget -> widget.render(g));
 	}
