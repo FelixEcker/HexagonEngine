@@ -1,5 +1,6 @@
 package de.hexagonsoftware.test;
  
+import java.awt.Color;
 import java.awt.Graphics;
 
 import de.hexagonsoftware.engine.HexagonEngine;
@@ -45,6 +46,9 @@ public class Main {
 
 			@Override
 			public void render(Graphics g) {
+				g.setColor(Color.RED);
+				g.drawLine(0, HexagonEngine.getHeight()/2, HexagonEngine.getWidth(), HexagonEngine.getHeight()/2);
+				g.drawLine(HexagonEngine.getWidth()/2, 0, HexagonEngine.getWidth()/2, HexagonEngine.getHeight());
 			}
 
 		}, "/config.json");
