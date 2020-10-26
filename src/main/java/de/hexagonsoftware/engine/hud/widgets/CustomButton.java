@@ -6,9 +6,8 @@ import java.awt.Rectangle;
 
 import de.hexagonsoftware.engine.HexagonEngine;
 
-public class CustomButton extends HUDWidget {
+public class CustomButton extends ImageButton {
 	private RenderHandler renderHandler;
-	private ActionHandler actionHandler;
 	public boolean hovered;
 	
 	public CustomButton(int x, int y) {
@@ -16,7 +15,7 @@ public class CustomButton extends HUDWidget {
 	}
 
 	public CustomButton(int x, int y, int width, int height) {
-		super(x, y, width, height);
+		super(x, y);
 	}
 	
 	public CustomButton(int x, int y, RenderHandler renderHandler, ActionHandler actionHandler) {
@@ -24,7 +23,7 @@ public class CustomButton extends HUDWidget {
 	}
 	
 	public CustomButton(int x, int y, int width, int height, RenderHandler renderHandler, ActionHandler actionHandler) {
-		super(x, y, width, height);
+		super(x, y);
 	}
 	
 	@Override

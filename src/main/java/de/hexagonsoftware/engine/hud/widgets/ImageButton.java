@@ -13,7 +13,11 @@ public class ImageButton extends HUDWidget {
 	private int widthScaleFactor;
 	private int heightScaleFactor;
 	private boolean hovered;
-	private ActionHandler actionHandler;
+	protected ActionHandler actionHandler;
+	
+	public ImageButton(int x, int y) {
+		super(x, y);
+	}
 	
 	public ImageButton(String texture, int x, int y, ActionHandler actionHandler) {
 		super(x, y);
