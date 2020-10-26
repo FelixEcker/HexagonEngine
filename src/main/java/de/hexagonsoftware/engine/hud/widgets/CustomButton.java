@@ -51,4 +51,20 @@ public class CustomButton extends HUDWidget {
 			}
 		}
 	}
+
+	public RenderHandler getRenderHandler() {
+		return renderHandler;
+	}
+
+	public ActionHandler getActionHandler() {
+		return actionHandler;
+	}
+
+	public void setRenderHandler(RenderHandler renderHandler) {
+		this.renderHandler = renderHandler;
+	}
+
+	public void setActionHandler(ActionHandler actionHandler) {
+		this.actionHandler = actionHandler;
+	}
 }
