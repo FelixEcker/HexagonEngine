@@ -18,9 +18,9 @@ public class ButtonBox extends HUDWidget {
 	
 	private int alignment;
 	private ImageButton[] buttons;
-	private int[][] positions;
 	
 	private int ticks = 0;
+	private int ticksToUpdate = 60;
 	
 	public ButtonBox(int x, int y) {
 		super(x, y);
@@ -72,8 +72,6 @@ public class ButtonBox extends HUDWidget {
 	public void calculatePositions() {
 		if (buttons.length < 0)
 			return;
-		
-		positions = new int[buttons.length][buttons.length*2];
 
 		this.height = 0;
 		for (ImageButton button : buttons) {
@@ -99,7 +97,7 @@ public class ButtonBox extends HUDWidget {
 			button.update();
 		}
 		
-		if (ticks % 60 == 0) {
+		if (ticks % ticksToUpdate == 0) {
 			calculatePositions();
 		}
 	}
@@ -125,5 +123,13 @@ public class ButtonBox extends HUDWidget {
 
 	public void setButtons(ImageButton[] buttons) {
 		this.buttons = buttons;
+	}
+
+	public int getTicksToUpdate() {
+		return ticksToUpdate;
+	}
+
+	public void setTicksToUpdate(int ticksToUpdate) {
+		this.ticksToUpdate = ticksToUpdate;
 	}
 }

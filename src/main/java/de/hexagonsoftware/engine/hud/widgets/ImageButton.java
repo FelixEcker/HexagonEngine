@@ -28,11 +28,30 @@ public class ImageButton extends HUDWidget {
 		this.actionHandler = actionHandler;
 	}
 	
+	public ImageButton(BufferedImage texture, int x, int y, ActionHandler actionHandler) {
+		super(x, y);
+		
+		this.texture = texture;
+		this.widthScaleFactor = HexagonEngine.getWidth()/this.texture.getWidth();
+		this.heightScaleFactor = HexagonEngine.getHeight()/this.texture.getHeight();
+		this.actionHandler = actionHandler;
+	}
+	
 	public ImageButton(String texture, String hoverOverlay, int x, int y, ActionHandler actionHandler) {
 		super(x, y);
 		
 		this.texture = HexagonEngine.HE_RES_MANAGER.getTextureResource(texture).getImage();
 		this.hoverOverlay = HexagonEngine.HE_RES_MANAGER.getTextureResource(hoverOverlay).getImage();
+		this.widthScaleFactor = HexagonEngine.getWidth()/this.texture.getWidth();
+		this.heightScaleFactor = HexagonEngine.getHeight()/this.texture.getHeight();
+		this.actionHandler = actionHandler;
+	}
+	
+	public ImageButton(BufferedImage texture, BufferedImage hoverOverlay, int x, int y, ActionHandler actionHandler) {
+		super(x, y);
+		
+		this.texture = texture;
+		this.hoverOverlay = hoverOverlay;
 		this.widthScaleFactor = HexagonEngine.getWidth()/this.texture.getWidth();
 		this.heightScaleFactor = HexagonEngine.getHeight()/this.texture.getHeight();
 		this.actionHandler = actionHandler;
@@ -48,7 +67,7 @@ public class ImageButton extends HUDWidget {
 	@Override
 	public void update() {
 		width = (HexagonEngine.getWidth()/widthScaleFactor);
-		height = (HexagonEngine.getWidth()/heightScaleFactor);
+		height = (HexagonEngine.getHeight()/heightScaleFactor);
 		Rectangle buttonBounds = new Rectangle(x, y, width, height);
 		Point     hoverPoint   = new Point(HexagonEngine.HE_MOUSE_INPUT.getLastMouseEvent().getX(), HexagonEngine.HE_MOUSE_INPUT.getLastMouseEvent().getY());
 		
