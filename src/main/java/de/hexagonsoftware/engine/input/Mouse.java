@@ -43,6 +43,17 @@ public class Mouse extends MouseAdapter {
 	public void mouseWheelMoved(MouseWheelEvent e) {
 		lastMouseEvent = e;
 	}
+	
+	/**
+	 * Cancels the button press of the specified button.
+	 * @param button The id of the button to be removed
+	 * */
+	public void cancelButtonClick(int button) {
+		if (!buttons.contains(button))
+			return;
+		
+		buttons.remove(buttons.indexOf(button));
+	}
 
 	public boolean wasButtonClicked(int button) {
 		return buttons.contains(button);
