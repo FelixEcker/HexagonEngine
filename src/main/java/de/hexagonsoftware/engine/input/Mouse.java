@@ -3,6 +3,7 @@ package de.hexagonsoftware.engine.input;
 import java.awt.Canvas;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,6 +13,7 @@ public class Mouse extends MouseAdapter {
 	 * */
 	public static List<Integer> buttons = new LinkedList<>();
 	public MouseEvent lastMouseEvent;
+	public MouseWheelEvent lastMouseWheelEvent;
 	
 	@Override
 	public void mousePressed(MouseEvent e) {
@@ -36,6 +38,11 @@ public class Mouse extends MouseAdapter {
 	public void mouseMoved(MouseEvent e) {
 		lastMouseEvent = e;
 	}
+	
+	@Override
+	public void mouseWheelMoved(MouseWheelEvent e) {
+		lastMouseEvent = e;
+	}
 
 	public boolean wasButtonClicked(int button) {
 		return buttons.contains(button);
@@ -43,5 +50,9 @@ public class Mouse extends MouseAdapter {
 	
 	public MouseEvent getLastMouseEvent() {
 		return lastMouseEvent != null ? lastMouseEvent : new MouseEvent(new Canvas(), 0, 0, 0, 0, 0, 0, false);
+	}
+
+	public MouseWheelEvent getLastMouseWheelEvent() {
+		return lastMouseWheelEvent;
 	}
 }

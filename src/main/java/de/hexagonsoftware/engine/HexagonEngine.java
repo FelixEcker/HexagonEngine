@@ -13,6 +13,7 @@ import de.hexagonsoftware.engine.graphics.Renderer;
 import de.hexagonsoftware.engine.hud.HUDManager;
 import de.hexagonsoftware.engine.input.Keyboard;
 import de.hexagonsoftware.engine.input.Mouse;
+import de.hexagonsoftware.engine.input.MouseWheel;
 import de.hexagonsoftware.engine.resources.ResourceManager;
 import de.hexagonsoftware.engine.scene.Scene;
 import de.hexagonsoftware.engine.util.EngineConfig;
@@ -86,6 +87,10 @@ public class HexagonEngine implements Runnable {
 	 * MouseAdpater for Window
 	 * */
 	public static final Mouse HE_MOUSE_INPUT = new Mouse();
+	/**
+	 * MouseWheelListener for Window
+	 * */
+	public static final MouseWheel HE_MOUSEWHEEL_INPUT = new MouseWheel();
 	/*************************************************/
 	/* Game Variables */
 	/**
@@ -165,6 +170,7 @@ public class HexagonEngine implements Runnable {
 
 		HE_WINDOW.getCVS().addMouseListener(HE_MOUSE_INPUT);
 		HE_WINDOW.getCVS().addMouseMotionListener(HE_MOUSE_INPUT);
+		HE_WINDOW.getCVS().addMouseWheelListener(HE_MOUSEWHEEL_INPUT);
 		HE_WINDOW.getCVS().addKeyListener(HE_KEY_INPUT);
 		
 		HE_WINDOW.getCVS().requestFocus();
@@ -202,6 +208,7 @@ public class HexagonEngine implements Runnable {
 
 		HE_WINDOW.getCVS().addMouseListener(HE_MOUSE_INPUT);
 		HE_WINDOW.getCVS().addMouseMotionListener(HE_MOUSE_INPUT);
+		HE_WINDOW.getCVS().addMouseWheelListener(HE_MOUSEWHEEL_INPUT);
 		HE_WINDOW.getCVS().addKeyListener(HE_KEY_INPUT);
 		
 		HE_WINDOW.getCVS().requestFocus();

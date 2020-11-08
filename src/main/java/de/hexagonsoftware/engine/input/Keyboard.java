@@ -15,6 +15,7 @@ public class Keyboard extends KeyAdapter {
 	 * A list of all currently pressed keys.
 	 * */
 	public static List<Character> keys = new LinkedList<>();
+	public static KeyEvent lastKeyEvent = null;
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -22,6 +23,7 @@ public class Keyboard extends KeyAdapter {
 			return;
 		
 		keys.add(e.getKeyChar());
+		lastKeyEvent = e;
 	}	
 	
 	@Override
@@ -30,6 +32,7 @@ public class Keyboard extends KeyAdapter {
 			return;
 		
 		keys.remove((Character)e.getKeyChar());
+		lastKeyEvent = e;
 	}
 	
 	/**
