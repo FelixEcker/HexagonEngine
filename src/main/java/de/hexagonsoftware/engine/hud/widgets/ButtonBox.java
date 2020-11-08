@@ -73,6 +73,9 @@ public class ButtonBox extends HUDWidget {
 	}
 	
 	public void calculatePositions() {
+		if (!guiInitialised)
+			guiInitialised = true;
+		
 		if (buttons.length < 0)
 			return;
 
