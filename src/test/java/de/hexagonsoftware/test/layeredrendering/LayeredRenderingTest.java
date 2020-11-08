@@ -10,11 +10,7 @@ import de.hexagonsoftware.engine.util.HEResourceLoadException;
 public class LayeredRenderingTest implements IGame {
 	@Override
 	public void init() {
-		try {
-			JSONResourceLoader.loadResources("/resources.json");
-		} catch (HEResourceLoadException e) {
-			e.printStackTrace();
-		}
+		JSONResourceLoader.loadResources("/resources.json");
 	}
 	
 	@Override

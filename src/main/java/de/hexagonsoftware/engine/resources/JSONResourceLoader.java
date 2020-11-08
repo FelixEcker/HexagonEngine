@@ -24,9 +24,8 @@ public class JSONResourceLoader {
 	 * Loads all resources listed in the specified file.
 	 * 
 	 * @param file The JSON file from which to load them.
-	 * @throws HEResourceLoadException
 	 * */
-	public static void loadResources(String file) throws HEResourceLoadException {
+	public static void loadResources(String file) {
 		logger.info("Loading Resources from JSON file "+file);
 		Gson gson = new Gson();
 		JsonReader reader = new JsonReader(new InputStreamReader(HexagonEngine.getGame().getClass().getResourceAsStream(file)));

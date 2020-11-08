@@ -29,7 +29,7 @@ public class SoundResource implements IResource {
 	
 	/**
 	 * Loads the sound from the given path.
-	 * @throws HEResourceLoadException
+	 * @throws HEResourceLoadException HERLE is thrown if something goes wrong during Resource Loading
 	 * */
 	public void load() throws HEResourceLoadException {
 		Class<?> cls = useGameResourceDir ? HexagonEngine.getGame().getClass() : this.getClass();

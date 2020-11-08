@@ -17,11 +17,7 @@ public class Main {
 			@Override
 			public void init() {
 				HexagonEngine.HE_RES_MANAGER.setLogging(true);
-				try {
-					JSONResourceLoader.loadResources("/assets/resources.json");
-				} catch (HEResourceLoadException e) {
-					e.printStackTrace();
-				}
+				JSONResourceLoader.loadResources("/assets/resources.json");
 				
 				Scene mainScene = SceneLoader.loadScene("/assets/scene.json");
 				HexagonEngine.setHE_IGAME_IMP_SCENE(mainScene);
