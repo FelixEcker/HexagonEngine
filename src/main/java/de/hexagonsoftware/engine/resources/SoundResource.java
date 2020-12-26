@@ -2,6 +2,7 @@ package de.hexagonsoftware.engine.resources;
 
 import de.hexagonsoftware.engine.HexagonEngine;
 import de.hexagonsoftware.engine.sound.Sound;
+import de.hexagonsoftware.engine.util.ErrorHandler;
 import de.hexagonsoftware.engine.util.HEResourceLoadException;
 
 /**
@@ -44,7 +45,7 @@ public class SoundResource implements IResource {
 			try {
 				load();
 			} catch (HEResourceLoadException e) {
-				e.printStackTrace();
+				ErrorHandler.reportException(new HEResourceLoadException());
 			}
 		}
 		

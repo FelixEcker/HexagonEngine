@@ -17,6 +17,7 @@ import de.hexagonsoftware.engine.input.MouseWheel;
 import de.hexagonsoftware.engine.resources.ResourceManager;
 import de.hexagonsoftware.engine.scene.Scene;
 import de.hexagonsoftware.engine.util.EngineConfig;
+import de.hexagonsoftware.engine.util.ErrorHandler;
 
 /**
  * Hexagon Engine by Hexagon Software
@@ -142,6 +143,7 @@ public class HexagonEngine implements Runnable {
 		this.HE_FPS_CAP = fpsCap;
 		this.HE_TARGET_TIME = HE_TARGET_TIME / HE_FPS_CAP;
 		HexagonEngine.HE_FPS = 0;
+		ErrorHandler.engine = this;
 	}
 	
 	/**

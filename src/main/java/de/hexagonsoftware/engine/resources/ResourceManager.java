@@ -5,6 +5,7 @@ import java.util.HashMap;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import de.hexagonsoftware.engine.util.ErrorHandler;
 import de.hexagonsoftware.engine.util.HEMissingResourceException;
 
 /**
@@ -73,7 +74,7 @@ public class ResourceManager {
 	 * */
 	public IResource getResource(String name) {
 		if (this.RESOURCES.get(name) == null)
-			throw new HEMissingResourceException();
+			ErrorHandler.reportException(new HEMissingResourceException());
 		
 		return this.RESOURCES.get(name);
 	}

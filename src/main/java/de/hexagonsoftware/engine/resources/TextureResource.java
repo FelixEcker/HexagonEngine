@@ -3,6 +3,7 @@ package de.hexagonsoftware.engine.resources;
 import java.awt.image.BufferedImage;
 
 import de.hexagonsoftware.engine.HexagonEngine;
+import de.hexagonsoftware.engine.util.ErrorHandler;
 import de.hexagonsoftware.engine.util.HEResourceLoadException;
 
 /**
@@ -34,7 +35,7 @@ public class TextureResource implements IResource {
 			this.img = ImageLoader.loadImage(cls.getResource(path));
 		} catch (HEResourceLoadException e) {
 			this.img = ((TextureResource) ResourceManager.getInstance().getResource(ResourceManager.RES_MANAGER_STD_MTNAME)).getImage();
-			e.printStackTrace();
+			ErrorHandler.reportException(new HEResourceLoadException());
 		}
 	}
 	

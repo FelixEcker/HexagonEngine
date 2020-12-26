@@ -77,7 +77,7 @@ public class ImageButton extends HUDWidget {
 			hovered = false;
 		}
 		
-		if (HexagonEngine.HE_MOUSE_INPUT.wasButtonClicked(1)) {
+		if (HexagonEngine.HE_MOUSE_INPUT.wasButtonClicked(1) && HexagonEngine.HE_MOUSE_INPUT.lastMouseEvent != null) {
 			Rectangle clickBounds  = new Rectangle(HexagonEngine.HE_MOUSE_INPUT.lastMouseEvent.getX(), HexagonEngine.HE_MOUSE_INPUT.lastMouseEvent.getY(), 1, 1);
 			
 			if (clickBounds.intersects(buttonBounds)) {

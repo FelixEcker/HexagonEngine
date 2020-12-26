@@ -30,7 +30,7 @@ public class LanguageManager {
 		Gson gson = new Gson();
 		JsonReader reader = new JsonReader(new InputStreamReader(HexagonEngine.getGame().getClass().getResourceAsStream(path)));
 		this.languages = gson.fromJson(reader, JsonObject.class);
-		loadLanguage(languages.get(defaultLang).getAsString());
+		loadLanguage(defaultLang);
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class LanguageManager {
 	 * */
 	public void loadLanguage(String lang) {
 		Gson gson = new Gson();
-		JsonReader reader = new JsonReader(new InputStreamReader(HexagonEngine.getGame().getClass().getResourceAsStream(lang)));
+		JsonReader reader = new JsonReader(new InputStreamReader(HexagonEngine.getGame().getClass().getResourceAsStream(languages.get(lang).getAsString())));
 		this.currentLang = gson.fromJson(reader, JsonObject.class);
 	}
 	

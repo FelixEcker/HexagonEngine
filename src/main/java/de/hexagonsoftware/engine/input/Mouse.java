@@ -54,6 +54,10 @@ public class Mouse extends MouseAdapter {
 		
 		buttons.remove(buttons.indexOf(button));
 	}
+	
+	public void cancelLastMouseEvent() {
+		lastMouseEvent = null;
+	}
 
 	public boolean wasButtonClicked(int button) {
 		return buttons.contains(button);

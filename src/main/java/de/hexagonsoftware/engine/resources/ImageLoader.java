@@ -6,6 +6,7 @@ import java.net.URL;
 
 import javax.imageio.ImageIO;
 
+import de.hexagonsoftware.engine.util.ErrorHandler;
 import de.hexagonsoftware.engine.util.HEResourceLoadException;
 
 public class ImageLoader {
@@ -13,13 +14,13 @@ public class ImageLoader {
 		BufferedImage img = null;
 		
 		if (path == null) {
-			throw new HEResourceLoadException();
+			ErrorHandler.reportException(new HEResourceLoadException());
 		}
 		
 		try {
 			img = ImageIO.read(path);
 		} catch (IOException e) {
-			throw new HEResourceLoadException();
+			ErrorHandler.reportException(new HEResourceLoadException());
 		}
 		
 		if (img != null) {

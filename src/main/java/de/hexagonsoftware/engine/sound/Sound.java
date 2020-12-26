@@ -39,6 +39,12 @@ public class Sound {
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();
         }
+		
+        try {
+            this.clip.open(stream);
+        } catch (LineUnavailableException | IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -46,11 +52,6 @@ public class Sound {
      * @author Felix Eckert
      * */
     public void playSound() {
-        try {
-            this.clip.open(stream);
-        } catch (LineUnavailableException | IOException e) {
-            e.printStackTrace();
-        }
         clip.start();
     }
     
