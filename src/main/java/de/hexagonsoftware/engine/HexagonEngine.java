@@ -21,7 +21,7 @@ import de.hexagonsoftware.engine.util.ErrorHandler;
 
 /**
  * Hexagon Engine by Hexagon Software
- * Copyright (c) 2020 Hexagon Software
+ * Copyright (c) 2020-2021 Hexagon Software
  * 
  * Please read the README and the LICENSE file
  * before contributing/using.
